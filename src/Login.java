@@ -47,8 +47,7 @@ public class Login extends JFrame implements ActionListener, MouseListener {
 
         JTextField field = new JTextField();
         mainPanel.add(field);
-        // mainPanel.setBackground(Color.white);
-
+        
         field.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.gray));
 
 
@@ -88,18 +87,15 @@ public class Login extends JFrame implements ActionListener, MouseListener {
         userProfileLabel.setBounds(80, 140, 180, 180);
         userProfileLabel.addMouseListener(this);
         userProfileLabel.setBackground(null);
-        //userProfileLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, Color.gray));
         childPanel.add(userProfileLabel);
         setImageLabel( "/img/bg.png", userProfileLabel, 180, 180);
-       // mainPanel.add(userProfileLabel);
 
 
         l.setBounds(745, 140, 40, 40);
         tf.setBounds(430, 140, 300, 28);
 
         mainPanel.add(login);
-        //////////////color///////////////
-        l.setBackground(new Color(234, 157, 23));
+      
         l.setFont(new Font("Tahoma", 1, 14)); // NOI18N
         tf.setFont(new Font("Tahoma", 1, 14)); // NOI18N
 
@@ -130,29 +126,19 @@ public class Login extends JFrame implements ActionListener, MouseListener {
                 JOptionPane.showMessageDialog(null, "please enter your username!");
             } else if (tf.getText().length() < 3) {
                 JOptionPane.showMessageDialog(null, "you username can not less than 3 letter!");
-            } else {
-
-                if (tf.getText().length() >= 3) {
-
-                    if (tf.getText().length() < 1) {
-                        JOptionPane.showMessageDialog(null, "please enter your Password!");
-                    } else if (tf.getText().length() < 3) {
-                        JOptionPane.showMessageDialog(null, "you Password can not less than 3 letters!");
-                    }
-
-                    if (tf.getText().length() >= 3) {
-                        try {
-                            username=tf.getText();
-
-                        } catch (Exception ex) {
-                            Logger.getLogger( Login.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
+            } 
+            if (tf.getText().length() >= 3) {
+                try {
+                    username=tf.getText();  
+                } catch (Exception ex) { 
+                    Logger.getLogger( Login.class.getName()).log(Level.SEVERE, null, ex);
+   
                 }
+                
             }
+            
         }
     }
-
 
     @Override
     public void mouseClicked(MouseEvent me) {
