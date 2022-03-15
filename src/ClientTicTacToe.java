@@ -24,12 +24,12 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 	private static boolean Next_Previews = false;
 	private static String username;
 	private Stack LiFo;
-    private Stack FiLo;
-    private final JLabel userProfileLabel;
-    private final JLabel usernameLabel;
-    private final JLabel winLabel;
-    private final JLabel lossLabel;
-    private final JLabel turnLabel;
+	private Stack FiLo;
+	private final JLabel userProfileLabel;
+	private final JLabel usernameLabel;
+	private final JLabel winLabel;
+	private final JLabel lossLabel;
+	private final JLabel turnLabel;
 	private final JButton BackButton;
 	private final JButton BackForwardButton;
 	private final JButton Exit;
@@ -55,7 +55,7 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 
 	public ClientTicTacToe() throws IOException {
 
-	    setTitle("Client");
+		setTitle("Client");
 		arrayList = new ArrayList<Integer>();
 		FiLo = new Stack();
 		LiFo = new Stack();
@@ -89,8 +89,8 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 		lossLabel.setForeground(Color.WHITE);
 		lossLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
 
-        turnLabel = new JLabel("First click to start");
-        turnLabel.setBounds(110, 70, 250, 20);
+		turnLabel = new JLabel("First click to start");
+		turnLabel.setBounds(110, 70, 250, 20);
 		p.add(turnLabel);
 		turnLabel.setForeground(Color.WHITE);
 		turnLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
@@ -309,68 +309,68 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 	private boolean isWon() {
 
 		switch (i) {
-		case 0:
-			if ((ch[1].equals("*") && ch[2].equals("*")) || (ch[3].equals("*") && ch[6].equals("*"))
-					|| (ch[4].equals("*") && ch[8].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
-		case 1:
-			if ((ch[0].equals("*") && ch[2].equals("*")) || (ch[4].equals("*") && ch[7].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
-		case 2:
-			if ((ch[0].equals("*") && ch[1].equals("*")) || (ch[5].equals("*") && ch[8].equals("*"))
-					|| (ch[4].equals("*") && ch[6].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
+			case 0:
+				if ((ch[1].equals("*") && ch[2].equals("*")) || (ch[3].equals("*") && ch[6].equals("*"))
+						|| (ch[4].equals("*") && ch[8].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
+			case 1:
+				if ((ch[0].equals("*") && ch[2].equals("*")) || (ch[4].equals("*") && ch[7].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
+			case 2:
+				if ((ch[0].equals("*") && ch[1].equals("*")) || (ch[5].equals("*") && ch[8].equals("*"))
+						|| (ch[4].equals("*") && ch[6].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
 
-		case 3:
-			if ((ch[0].equals("*") && ch[6].equals("*")) || (ch[4].equals("*") && ch[5].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
+			case 3:
+				if ((ch[0].equals("*") && ch[6].equals("*")) || (ch[4].equals("*") && ch[5].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
 
-		case 4:
-			if ((ch[0].equals("*") && ch[8].equals("*")) || (ch[2].equals("*") && ch[6].equals("*"))
-					|| (ch[3].equals("*") && ch[5].equals("*")) || (ch[1].equals("*") && ch[7].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
-		case 5:
-			if ((ch[3].equals("*") && ch[4].equals("*")) || (ch[2].equals("*") && ch[8].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
+			case 4:
+				if ((ch[0].equals("*") && ch[8].equals("*")) || (ch[2].equals("*") && ch[6].equals("*"))
+						|| (ch[3].equals("*") && ch[5].equals("*")) || (ch[1].equals("*") && ch[7].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
+			case 5:
+				if ((ch[3].equals("*") && ch[4].equals("*")) || (ch[2].equals("*") && ch[8].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
 
-		case 6:
-			if ((ch[0].equals("*") && ch[3].equals("*")) || (ch[7].equals("*") && ch[8].equals("*"))
-					|| (ch[4].equals("*") && ch[2].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
-		case 7:
-			if ((ch[6].equals("*") && ch[8].equals("*")) || (ch[1].equals("*") && ch[4].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
-		case 8:
-			if ((ch[0].equals("*") && ch[4].equals("*")) || (ch[6].equals("*") && ch[7].equals("*"))
-					|| (ch[2].equals("*") && ch[5].equals("*"))) {
-				finish = true;
-				return true;
-			}
-			break;
+			case 6:
+				if ((ch[0].equals("*") && ch[3].equals("*")) || (ch[7].equals("*") && ch[8].equals("*"))
+						|| (ch[4].equals("*") && ch[2].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
+			case 7:
+				if ((ch[6].equals("*") && ch[8].equals("*")) || (ch[1].equals("*") && ch[4].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
+			case 8:
+				if ((ch[0].equals("*") && ch[4].equals("*")) || (ch[6].equals("*") && ch[7].equals("*"))
+						|| (ch[2].equals("*") && ch[5].equals("*"))) {
+					finish = true;
+					return true;
+				}
+				break;
 		}
 		return false;
 	}
@@ -392,8 +392,8 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 	}
 
 	private void doMove() {
-        if (finish)
-            return;
+		if (finish)
+			return;
 
 		arrayList.add(i);
 		yourTurn = false;
@@ -408,8 +408,8 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 				FiLo.display(FiLo);
 
 				if (isWon()) {
-				    output.writeUTF("9");
-				    win++;
+					output.writeUTF("9");
+					win++;
 					winLabel.setText("Wins: " + win);
 					finish = true;
 					yourTurn = false;
@@ -417,14 +417,15 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 					Next_Previews = true;
 					BackButton.setVisible( true );
 					BackForwardButton.setVisible( true );
-                    RematchButton.setVisible( true );
+					RematchButton.setVisible( true );
 					JOptionPane.showMessageDialog(null, "You Win!");
 				}
 
 				if (isDraw()) {
 					BackButton.setVisible( true );
 					BackForwardButton.setVisible( true );
-                    RematchButton.setVisible( true );
+					RematchButton.setVisible( true );
+					turnLabel.setText("Draw!");
 					JOptionPane.showMessageDialog(null, "Draw!");
 				}
 
@@ -598,14 +599,16 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 	}
 
 	private void playSound() {
-		try {
-			AudioInputStream audioIn = AudioSystem
-					.getAudioInputStream( ServerTicTacToe.class.getResource("/audio/move.wav"));
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioIn);
-			clip.start();
+		if (!finish) {
+			try {
+				AudioInputStream audioIn = AudioSystem
+						.getAudioInputStream( ServerTicTacToe.class.getResource( "/audio/move.wav" ) );
+				Clip clip = AudioSystem.getClip();
+				clip.open( audioIn );
+				clip.start();
 
-		} catch (Exception e) {
+			} catch (Exception e) {
+			}
 		}
 	}
 
@@ -626,7 +629,7 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 
 		BackButton.setVisible( false );
 		BackForwardButton.setVisible( false );
-        RematchButton.setVisible( false );
+		RematchButton.setVisible( false );
 		for (int j = 0; j < 9; j++) {
 			ch[j] = "";
 			b[j].setBackground(Color.white);
@@ -658,15 +661,15 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 			output = new DataOutputStream(socket.getOutputStream());
 			pos = 0;
 			while (true) {
-                System.out.println( "Client " +pos );
+				System.out.println( "Client " +pos );
 				String str = null;
 				str = input.readUTF().trim();
-                String a = "";
+				String a = "";
 				if (!isNumeric(str)) {
-                    for (int j = 1; j < str.length(); j++) {
-                        a += str.charAt( j );
-                    }
-                }else{
+					for (int j = 1; j < str.length(); j++) {
+						a += str.charAt( j );
+					}
+				}else{
 					pos = Byte.parseByte(str);
 					if (pos == 20) {
 						System.exit(0);
@@ -679,7 +682,7 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 					if (pos == 11) {
 						BackButton.setVisible( true );
 						BackForwardButton.setVisible( true );
-                        RematchButton.setVisible( true );
+						RematchButton.setVisible( true );
 						doReload();
 					}
 
@@ -687,19 +690,19 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 						int reply = JOptionPane.showConfirmDialog(null, "Do You Want Rematch?", "Question",
 								JOptionPane.YES_NO_OPTION);
 						if (reply == JOptionPane.YES_OPTION) {
-                            output.writeUTF("11");
+							output.writeUTF("11");
 							doReload();
 						}
 					}
 
 					if (pos == 9) {
 
-                        finish = true;
+						finish = true;
 						yourTurn = false;
 						turnLabel.setText("Better luck next time");
 						BackButton.setVisible( true );
 						BackForwardButton.setVisible( true );
-                        RematchButton.setVisible( true );
+						RematchButton.setVisible( true );
 						loss++;
 						lossLabel.setText("Loss: " + loss);
 						JOptionPane.showMessageDialog(null, "You Loss!");
@@ -713,9 +716,10 @@ public class ClientTicTacToe extends JFrame implements MouseListener, KeyListene
 						finish = true;
 						BackButton.setVisible( true );
 						BackForwardButton.setVisible( true );
-                        RematchButton.setVisible( true );
-                        output.writeUTF("b" + Login.username);
-                        JOptionPane.showMessageDialog(null, "Draw!");
+						RematchButton.setVisible( true );
+						turnLabel.setText("Draw! ");
+						output.writeUTF("b" + Login.username);
+						JOptionPane.showMessageDialog(null, "Draw!");
 					}
 					if (pos < 9) {
 						ch[pos] = "0";
