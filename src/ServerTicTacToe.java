@@ -1,11 +1,4 @@
-//import jaco.mp3.player.MP3Player;
-//import java.io.File;
-
-//import javazoom.jlgui.
-//import javazoom.jlgui.basicplayer.BasicPlayerException;
-
 import generic.Stack;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -166,7 +159,7 @@ public class ServerTicTacToe extends JFrame implements KeyListener, MouseListene
     private void setImageLabel(String name, JLabel b, int x, int y) {
         Image ImageName
                 = new ImageIcon(this.getClass().
-                        getResource(name)).
+                getResource(name)).
                 getImage().
                 getScaledInstance(x, y, Image.SCALE_DEFAULT);
 
@@ -284,11 +277,12 @@ public class ServerTicTacToe extends JFrame implements KeyListener, MouseListene
                     }
 
                     if (pos == 15) {
+                        finish = true;
                         BackButton.setVisible( true );
                         BackForwardButton.setVisible( true );
                         RematchButton.setVisible( true );
+                        turnLabel.setText("Draw!");
                         output.writeUTF("b" + Login.username);
-                        finish = true;
                         JOptionPane.showMessageDialog(null, "Draw!");
                     }
                     if (pos < 9) {
@@ -734,6 +728,7 @@ public class ServerTicTacToe extends JFrame implements KeyListener, MouseListene
                     BackButton.setVisible( true );
                     BackForwardButton.setVisible( true );
                     RematchButton.setVisible( true );
+                    turnLabel.setText("Draw!");
                     JOptionPane.showMessageDialog( null, "Draw!" );
                 }
             } catch (IOException ex) {
@@ -743,14 +738,16 @@ public class ServerTicTacToe extends JFrame implements KeyListener, MouseListene
     }
 
     private void playSound() {
-        try {
+        if (!finish) {
+            try {
 
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream( ServerTicTacToe.class.getResource("/audio/move.wav"));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioIn);
-            clip.start();
+                AudioInputStream audioIn = AudioSystem.getAudioInputStream( ServerTicTacToe.class.getResource( "/audio/move.wav" ) );
+                Clip clip = AudioSystem.getClip();
+                clip.open( audioIn );
+                clip.start();
 
-        } catch (Exception e) {
+            } catch (Exception e) {
+            }
         }
     }
 }
